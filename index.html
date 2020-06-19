@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>矩形计算器</title>
+		<link rel="stylesheet" type="text/css" href="a.css" />
+	</head>
+	<body>
+		<form >
+			<div class="main">
+<label>宽度：</label> 
+<input id="kd" type="text" onkeyup="if(!/^\d+$/.test(this.value)) {alert('请输入合法数值！'); this.value=this.value.replace(/[^\d]+/g,'');}"   autofocus/> 
+<span style="color:red">*</span><br>
+<label>高度：</label> 
+<input id="gd" type="text" onkeyup="if(!/^\d+$/.test(this.value)) {alert('请输入合法数值！'); this.value=this.value.replace(/[^\d]+/g,'');}"/   >
+ <span style="color:red">*</span><br>
+  <br><input id="calculate" type="button" value="计算" style="margin-right:46px" onclick="mn()"/><br />
+  <label>周长：</label> 
+<input id="zc" type="text" disabled="disabled"><br>
+<label>面积：</label> 
+<input id="mj" type="text" disabled="disabled"></div>
+</form>
+<script type="text/javascript">
+        function mn() {
+            var x = document.getElementById("kd").value;//获取高度数值。
+            var y = document.getElementById("gd").value;//获取宽度数值。
+            
+                var m = x * y;     
+                var n = 2 * x + 2 * y;
+                document.getElementById("mj").value = Math.round(m);
+                document.getElementById("zc").value = Math.round(n);
+                
+           if (x == '' && y == '') {
+
+                alert('不能为空哦！')
+
+}
+           else if(x == '' && y !== ''){
+
+                alert('宽度不能为空！')
+
+}
+           else if(x !== '' && y == ''){
+
+                alert('高度不能为空！')
+
+}
+           else if(x <= 0||y<=0){
+	            alert('数据不能小于零')
+}
+}
+   </script>
+	</body>
+</html>
