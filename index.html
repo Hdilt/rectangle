@@ -45,6 +45,14 @@
            else if(x <= 0||y<=0){
 	            alert('数据不能小于零')
 }
+		 if (y && x && !isNaN(+y) && !isNaN(+x)) {
+					n.value = (((+x) * 100 + (+y) * 100)*2)/100
+					m.value = ((+x) * 100 * (+y) * 100)/10000
+					} 
+			else {
+					n.value = ''
+					m.value = ''
+					}
 }
    </script>
 	</body>
